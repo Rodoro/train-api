@@ -8,7 +8,7 @@ async function bootstrap() {
   app.useWebSocketAdapter(new IoAdapter(app));
 
   app.enableCors({
-    origin: 'http://localhost:3001', // URL вашего Next.js-приложения
+    origin: process.env.FRONTEND_URL || 'http://localhost:3001', // URL вашего Next.js-приложения
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
     allowedHeaders: 'Content-Type,Authorization'
